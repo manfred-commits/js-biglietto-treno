@@ -11,3 +11,19 @@ console.log("numero di chilometri: " + chilometri);
 // 2)richiesta età del passegero
 var age= parseInt(prompt("Inserisci la tua età: "));
 console.log("età passegero: " + age);
+// 3) Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio, secondo queste regole:
+// il prezzo del biglietto è definito in base ai km (0.21 € al km)
+// quindi sarà necessario moltiplicare il valore in km fornito dall'utente per 0.21
+var prezzoPerChilometro = 0.21* chilometri;
+console.log("Prezzo per chilometro non scontato: " + prezzoPerChilometro);
+//4) va applicato uno sconto del 20% per i minorenni,
+// Quindi, se e solo se, l'età del passegero è minore di 18 anni
+var scontoDaApplicare;
+if(age < 18){
+    // ricavo lo sconto da sottrarre, moltiplicando il prezzo da scontare per lo sconto (in questo caso 20% per minorenni) in termini decimali
+    scontoDaApplicare= prezzoPerChilometro * 0.20; 
+    console.log("Sconto da applicare al prezzo del biglietto: " + scontoDaApplicare);
+    // sottraggo lo sconto ricavato al prezzo finale
+    prezzoPerChilometro= prezzoPerChilometro - scontoDaApplicare;
+    console.log("Prezzo scontato del 20%: " +prezzoPerChilometro);
+}
