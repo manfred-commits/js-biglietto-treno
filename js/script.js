@@ -18,6 +18,8 @@ var prezzoPerChilometro = 0.21* chilometri;
 console.log("Prezzo per chilometro non scontato: " + prezzoPerChilometro);
 //4) va applicato uno sconto del 20% per i minorenni,
 // Quindi, se e solo se, l'età del passegero è minore di 18 anni
+//5) va applicato uno sconto del 40% per gli over 65.
+// ed anche qui, se se solo se, l'età del passegero è maggiore di 65 anni
 var scontoDaApplicare;
 if(age < 18){
     // ricavo lo sconto da sottrarre, moltiplicando il prezzo da scontare per lo sconto (in questo caso 20% per minorenni) in termini decimali
@@ -34,3 +36,6 @@ if(age < 18){
     prezzoPerChilometro = prezzoPerChilometro - scontoDaApplicare;
     console.log("Prezzo scontato del 40%: " + prezzoPerChilometro);
 }
+// L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). Questo richiederà un minimo di ricerca.
+// 6) dare l'output utilizzando la funzione toFixed, per essere sicuri che il risultato avrà solo 2 cifre decimali dopo la virgola
+alert("Il prezzo da pagare per il suo biglietto, sarà: " + prezzoPerChilometro.toFixed(2) + "€");
