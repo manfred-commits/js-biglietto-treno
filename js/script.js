@@ -21,9 +21,16 @@ console.log("Prezzo per chilometro non scontato: " + prezzoPerChilometro);
 var scontoDaApplicare;
 if(age < 18){
     // ricavo lo sconto da sottrarre, moltiplicando il prezzo da scontare per lo sconto (in questo caso 20% per minorenni) in termini decimali
-    scontoDaApplicare= prezzoPerChilometro * 0.20; 
+    scontoDaApplicare = prezzoPerChilometro * 0.20; 
     console.log("Sconto da applicare al prezzo del biglietto: " + scontoDaApplicare);
     // sottraggo lo sconto ricavato al prezzo finale
-    prezzoPerChilometro= prezzoPerChilometro - scontoDaApplicare;
-    console.log("Prezzo scontato del 20%: " +prezzoPerChilometro);
+    prezzoPerChilometro = prezzoPerChilometro - scontoDaApplicare;
+    console.log("Prezzo scontato del 20%: " + prezzoPerChilometro);
+}else if(age > 65){
+    // ricavo lo sconto da sottrarre, moltiplicando il prezzo da scontare per lo sconto (in questo caso 40% per over 65) in termini decimali
+    scontoDaApplicare = prezzoPerChilometro * 0.40; 
+    console.log("Sconto da applicare al prezzo del biglietto: " + scontoDaApplicare);
+    // sottraggo lo sconto ricavato al prezzo finale
+    prezzoPerChilometro = prezzoPerChilometro - scontoDaApplicare;
+    console.log("Prezzo scontato del 40%: " + prezzoPerChilometro);
 }
